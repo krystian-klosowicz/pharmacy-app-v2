@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProduktyEdytujController">
+    <children>
+        <ImageView fx:id="exitImage" fitHeight="56.0" fitWidth="62.0" layoutX="691.0" layoutY="4.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/close.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+        </ImageView>
+        <TableView fx:id="table" layoutX="26.0" layoutY="115.0" prefHeight="358.0" prefWidth="700.0">
+            <columns>
+                <TableColumn fx:id="idProduktu" prefWidth="100.0" text="ID Produktu" />
+                <TableColumn fx:id="idProducenta" prefWidth="140.0" text="Id Producenta" visible="false" />
+                <TableColumn fx:id="idKategorii" prefWidth="140.0" text="ID Kategorii" visible="false" />
+                <TableColumn fx:id="nazwa" prefWidth="261.0" text="Nazwa" />
+                <TableColumn fx:id="cena" prefWidth="123.0" text="Cena [zł]" />
+                <TableColumn fx:id="ilośc" prefWidth="94.0" text="Ilość [szt]" />
+                <TableColumn fx:id="rabat" prefWidth="121.0" text="Rabat [%]" />
+            </columns>
+        </TableView>
+        <Button fx:id="deleteButton" layoutX="617.0" layoutY="480.0" mnemonicParsing="false" onMouseClicked="#setDeleteButton" text="Usuń produkt">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Label layoutX="278.0" layoutY="14.0" text="Lista produktów">
+            <font>
+                <Font name="System Bold Italic" size="25.0" />
+            </font>
+        </Label>
+        <Text fx:id="alert" fill="RED" layoutX="26.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="400.2734375">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Button fx:id="wyszukajButton" layoutX="553.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#wyszukaj" prefHeight="25.0" prefWidth="138.0" text="Wyszukaj" />
+        <Button fx:id="wszyscyButton" layoutX="553.0" layoutY="79.0" mnemonicParsing="false" onMouseClicked="#pokazWszystkich" prefHeight="25.0" prefWidth="138.0" text="Pokaż wszystkich" />
+        <TextField fx:id="nazwaField" layoutX="373.0" layoutY="48.0" promptText="Nazwa produktu" />
+        <ComboBox fx:id="producentCombo" layoutX="25.0" layoutY="48.0" prefWidth="150.0" promptText="Producent" />
+        <ComboBox fx:id="kategoriaCombo" layoutX="203.0" layoutY="48.0" prefWidth="150.0" promptText="Kategoria" />
+    </children>
+</AnchorPane>

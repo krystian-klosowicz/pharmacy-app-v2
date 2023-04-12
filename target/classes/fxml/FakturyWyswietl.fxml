@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SprzedazWyswietlController">
+   <children>
+      <ImageView fx:id="exitImage" fitHeight="56.0" fitWidth="62.0" layoutX="691.0" layoutY="4.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../SEM3/!PROJECTS/PO_JAVA_APTEKA/APTEKA/src/main/resources/img/close.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
+      <Text fx:id="alert" fill="RED" layoutX="25.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="253.2734375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Pane layoutY="57.0" prefHeight="6.0" prefWidth="752.0" style="-fx-background-color: black;" />
+      <ComboBox fx:id="klientCombo" layoutX="106.0" layoutY="79.0" prefHeight="25.0" prefWidth="210.0" />
+      <Label fx:id="klientLabel" layoutX="24.0" layoutY="76.0" prefHeight="32.0" prefWidth="82.0" text="Klient:">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="241.0" layoutY="14.0" text="Wyszukiwanie faktury">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="337.0" layoutY="119.0" text="Faktury">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <Text fx:id="alert" layoutX="28.0" layoutY="874.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="467.89453125">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TableView fx:id="fakturyTable" layoutX="24.0" layoutY="170.0" prefHeight="221.0" prefWidth="706.0">
+        <columns>
+          <TableColumn fx:id="faktury_id_faktury" prefWidth="190.0" text="ID Faktury" />
+          <TableColumn fx:id="faktury_id_kilenta" minWidth="0.0" prefWidth="237.0" text="ID Klienta" />
+            <TableColumn fx:id="faktury_data" prefWidth="278.0" text="Data wystawienia faktury" />
+        </columns>
+      </TableView>
+      <Button layoutX="337.0" layoutY="79.0" mnemonicParsing="false" onMouseClicked="#pokazFakturyKlienta" prefHeight="25.0" prefWidth="188.0" text="Pokaż faktury tego klienta">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Text layoutX="468.0" layoutY="859.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Łączna suma: " wrappingWidth="135.89453125">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="alertKlient" layoutX="543.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="170.89453125">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Label layoutX="282.0" layoutY="450.0" text="Szczegóły  faktury">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="faktury_produktyTable" layoutX="20.0" layoutY="481.0" prefHeight="337.0" prefWidth="706.0">
+        <columns>
+          <TableColumn fx:id="fakturyPro_id_glowne" prefWidth="121.0" text="ID fak_pro" visible="false" />
+          <TableColumn fx:id="fakturyPro_id_faktury" prefWidth="89.0" text="ID faktury" visible="false" />
+            <TableColumn fx:id="fakturyPro_id_produktu" prefWidth="197.0" text="ID Produktu" visible="false" />
+            <TableColumn fx:id="fakturyPro_nazwa" prefWidth="197.0" text="Nazwa produktu" />
+            <TableColumn fx:id="fakturyPro_cena" minWidth="0.0" prefWidth="241.0" text="Cena zakupu [zł]" />
+            <TableColumn fx:id="fakturyPro_ilosc" minWidth="0.0" prefWidth="267.0" text="Ilość [szt]" />
+        </columns>
+      </TableView>
+      <Button layoutX="543.0" layoutY="403.0" mnemonicParsing="false" onMouseClicked="#pokazSzczegolyFaktury" prefHeight="25.0" prefWidth="188.0" text="Wyświetl fakture">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="sumaField" editable="false" layoutX="604.0" layoutY="840.0" prefHeight="25.0" prefWidth="122.0" promptText="Suma" />
+   </children>
+</AnchorPane>

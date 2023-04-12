@@ -1,0 +1,13 @@
+entity\Login.class
+Controller\KlienciEdytujController.class
+Controller\SprzedazWyswietlController.class
+Controller\ProducenciDodajController.class
+Controller\KlienciDodajController.class
+Controller\ProducenciEdytujController.class
+Controller\ProduktyEdytujController.class
+Controller\SprzedazDodajController.class
+Controller\ProduktyEdytujController$1.class
+Controller\KlienciEdytujController$1.class
+Controller\ProduktyDodajController.class
+Controller\SprzedazController.class
+Controller\ProducenciEdytujController$1.class
